@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tanle/checkin_page.dart';
@@ -25,6 +26,21 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  List<String> recordId = [];
+
+  Future getRecordData() async {
+    await FirebaseFirestore.instance.collection('Records').get().then((snapshot) => snapshot.docs.forEach((element) {
+      print(element.reference);
+    }),);
+  }
+
+  @override
+  void initState() {
+    getRecordData();
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {

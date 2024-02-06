@@ -50,3 +50,5 @@ class Board {
       required this.description,
       required this.reviews});
 }
+
+

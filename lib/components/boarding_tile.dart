@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tanle/components/boarding_list.dart';
 
+
 class BoardingTile extends StatelessWidget {
   final BoardingHouse boarding;
   final void Function()? onTap;
-  const BoardingTile({super.key, required this.boarding, required this.onTap});
+  BoardingTile({super.key, required this.boarding, required this.onTap}) {
+  }
+
 
   @override
   Widget build(BuildContext context) {

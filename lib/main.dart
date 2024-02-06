@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tanle/Intro_page.dart';
 import 'firebase_options.dart';
 import 'nav_pages/data_insert.dart';
+import 'nav_pages/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyInsertPages(),
+      home: HomePage(),
     );
   }
 }

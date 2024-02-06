@@ -28,7 +28,7 @@ class _FavoritePageState extends State<FavoritePage> {
   }
 
   Future<void> _loadFavorites() async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     final itemData = List.generate(
       5,
       (index) => MyItem(
@@ -60,13 +60,13 @@ class _FavoritePageState extends State<FavoritePage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My Favorites',
+          title: const Text('My Favorites',
               style:
                   TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
           backgroundColor: Colors.blue, // Set the background color here
         ),
         body: _favorites.isEmpty
-            ? Center(child: Text('No favorites yet!'))
+            ? const Center(child: Text('No favorites yet!'))
             : ListView.builder(
                 itemCount: _favorites.length,
                 itemBuilder: (context, index) {
@@ -77,7 +77,7 @@ class _FavoritePageState extends State<FavoritePage> {
                     ),
                     child: ListTile(
                       title: Text(item.title,
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: const TextStyle(fontWeight: FontWeight.bold)),
                       subtitle: Text(item.description),
                       trailing: GestureDetector(
                         onTap: () => _toggleFavorite(index),
@@ -107,7 +107,7 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(item.title, style: TextStyle(color: Colors.white)),
+        title: Text(item.title, style: const TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue, // Set the background color here
       ),
       body: Center(
@@ -116,9 +116,9 @@ class DetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(item.description, textAlign: TextAlign.center),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text('Details for ${item.title}',
-                style: TextStyle(
+                style: const TextStyle(
                     fontWeight: FontWeight.bold, color: Colors.white)),
           ],
         ),
